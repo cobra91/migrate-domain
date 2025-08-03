@@ -1,36 +1,152 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Migrate Domain
 
-## Getting Started
+A Next.js application designed to handle domain redirections during domain changes between Vercel and other domain providers.
 
-First, run the development server:
+## 🎯 Purpose
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+This project serves as a domain redirection service that helps manage the transition between different domain providers, specifically when migrating from or to Vercel. It provides a centralized solution for handling domain redirects during domain changes.
+
+## 🚀 Features
+
+- **Domain Redirection**: Handle redirects between old and new domains
+- **Vercel Integration**: Optimized for Vercel deployment
+- **Next.js 15**: Built with the latest Next.js framework
+- **TypeScript**: Full TypeScript support for type safety
+- **Tailwind CSS**: Modern styling with Tailwind CSS v4
+
+## 📋 Prerequisites
+
+- Node.js 18+ 
+- pnpm (recommended) or npm
+- A Vercel account (for deployment)
+
+## 🛠️ Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/cobra91/migrate-domain.git
+   cd migrate-domain
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   pnpm install
+   # or
+   npm install
+   ```
+
+3. **Run the development server:**
+   ```bash
+   pnpm dev
+   # or
+   npm run dev
+   ```
+
+4. **Open your browser:**
+   Navigate to [http://localhost:3000](http://localhost:3000) to see the application.
+
+## 🏗️ Project Structure
+
+```
+migrate-domain/
+├── app/                    # Next.js App Router
+│   ├── layout.tsx         # Root layout
+│   ├── page.tsx           # Home page
+│   └── globals.css        # Global styles
+├── public/                # Static assets
+├── package.json           # Dependencies and scripts
+├── next.config.ts         # Next.js configuration
+├── tsconfig.json          # TypeScript configuration
+└── README.md             # This file
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🔧 Configuration
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Domain Configuration
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To configure domain redirects, you'll need to:
 
-## Learn More
+1. **Set up your domains** in your domain provider
+2. **Configure DNS records** to point to your Vercel deployment
+3. **Update the redirection logic** in the application
 
-To learn more about Next.js, take a look at the following resources:
+## 🚀 Deployment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Deploy to Vercel
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Push to GitHub:**
+   ```bash
+   git add .
+   git commit -m "Initial commit"
+   git push origin master
+   ```
 
-## Deploy on Vercel
+2. **Deploy on Vercel:**
+   - Connect your GitHub repository to Vercel
+   - Vercel will automatically detect it's a Next.js project
+   - Configure your domain settings in Vercel dashboard
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Manual Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+# Build the application
+pnpm build
+
+# Start the production server
+pnpm start
+```
+
+## 🔄 Domain Migration Process
+
+1. **Prepare the new domain** in your domain provider
+2. **Deploy this application** to Vercel
+3. **Configure DNS records** to point to your Vercel deployment
+4. **Update the redirection logic** in the application
+5. **Test the redirects** to ensure they work correctly
+6. **Update your main application** to use the new domain
+
+## 🧪 Development
+
+### Available Scripts
+
+- `pnpm dev` - Start development server
+- `pnpm build` - Build for production
+- `pnpm start` - Start production server
+- `pnpm lint` - Run ESLint
+
+### Adding New Features
+
+1. Create new components in the `app/` directory
+2. Add new pages following Next.js App Router conventions
+3. Update the redirection logic as needed
+4. Test thoroughly before deployment
+
+## 📝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🤝 Support
+
+If you encounter any issues or have questions:
+
+1. Check the [Issues](https://github.com/cobra91/migrate-domain/issues) page
+2. Create a new issue if your problem isn't already listed
+3. Provide detailed information about your setup and the problem
+
+## 🔗 Related Links
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Vercel Documentation](https://vercel.com/docs)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+
+---
+
+**Note:** This project is specifically designed for domain migration scenarios. Make sure to test thoroughly in a staging environment before applying to production domains.
